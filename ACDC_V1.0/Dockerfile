@@ -33,6 +33,16 @@ RUN apt-get install --yes libicu-dev \
 
 ###
 ## Optional PHP extensions
+RUN install-php-extensions \
+    bcmath \
+    memcached \
+    mysqli \
+    odbc \
+    soap \
+    xdebug \
+    xml \
+    @composer
+
 ###
 
 ## mbstring for i18n string support
