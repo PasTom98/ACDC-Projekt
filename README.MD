@@ -4,5 +4,6 @@ runme:
   version: v2.0
 ---
 
-# ACDC 
-Dies ist die Dokumentation
+# ACDC
+
+Dies ist die Dokumentation für ACDC eine Webanwendung zum Lernen von Karteikarten rund um das Thema REDA, Check24 und Software-Entwicklung.
