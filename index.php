@@ -1,7 +1,6 @@
 <?php
 
-
-
-function testPHPCSFIXER() {
-
+function testPHPCSFIXER()
+{
+    echo "test";
 }
