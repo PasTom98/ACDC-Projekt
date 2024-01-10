@@ -1,0 +1,14 @@
+{
+  // name of Container
+  "name": "devcontainer-webserver",
+
+  "dockerComposeFile": "../../docker-compose.dev.yaml",
+  "service": "webserver",
+  "workspaceFolder": "/var/www/html",
+  "forwardPorts": [80],
+  "features": {
+    "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {},
+    "ghcr.io/devcontainers/features/php:1": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  }
+}
