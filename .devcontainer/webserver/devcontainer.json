@@ -2,7 +2,7 @@
   // name of Container
   "name": "devcontainer-webserver",
 
-  "dockerComposeFile": "../../docker-compose.dev.yaml",
+  "dockerComposeFile": "../docker-compose.dev.yaml",
   "service": "webserver",
   "workspaceFolder": "/var/www/html",
   "forwardPorts": [80],

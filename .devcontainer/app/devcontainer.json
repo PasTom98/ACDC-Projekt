@@ -2,7 +2,7 @@
     // name of Container
     "name": "devcontainer-app",
   
-    "dockerComposeFile": "../../docker-compose.dev.yaml",
+    "dockerComposeFile": "../docker-compose.dev.yaml",
     "service": "app",
     "workspaceFolder": "/var/www/html",
   
