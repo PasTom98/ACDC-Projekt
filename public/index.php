@@ -11,7 +11,7 @@ $connect = mysqli_connect(
 $query = 'SELECT * FROM authors';
 $result = mysqli_query($connect, $query);
 
-echo '<h1> SQL Content:</h1>';
+echo '<h1> SQL Content: Test</h1>';
 
 while ($record = mysqli_fetch_assoc($result)) {
     echo '<h2>' . $record['first_name'] . '</h2>';
