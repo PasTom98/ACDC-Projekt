@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Test fixture.
  *
@@ -14,6 +13,7 @@ use stdClass;
 
 class SetPropertyAllowedViaStdClassSniff extends stdClass implements Sniff
 {
+
     public function register()
     {
         return [T_WHITESPACE];

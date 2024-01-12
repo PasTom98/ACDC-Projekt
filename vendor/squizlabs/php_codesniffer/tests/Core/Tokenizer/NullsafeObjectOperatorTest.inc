@@ -22,8 +22,8 @@ echo $obj ?
     -> foo;
 
 /* testParseErrorCommentNotAllowed */
-echo $obj ? /*comment*/-> foo;
+echo $obj ?/*comment*/-> foo;
 
 /* testLiveCoding */
 // Intentional parse error. This has to be the last test in the file.
-echo $obj ?
+echo $obj?

@@ -4,13 +4,11 @@
 $a = false;
 
 /* testControlStructure */
-while (true) {
-}
+while(true) {}
 $a = 1;
 
 /* testClosureAssignment */
-$a = function ($b = false;) {
-};
+$a = function($b=false;){};
 
 /* testHeredocFunctionArg */
 myFunction(<<<END
@@ -20,16 +18,14 @@ END
 
 /* testSwitch */
 switch ($a) {
-    case 1: {break;
-    }
-    default: {break;
-    }
+    case 1: {break;}
+    default: {break;}
 }
 
 /* testStatementAsArrayValue */
-$a = [new Datetime()];
-$a = array(new Datetime());
-$a = new Datetime();
+$a = [new Datetime];
+$a = array(new Datetime);
+$a = new Datetime;
 
 /* testUseGroup */
 use Vendor\Package\{ClassA as A, ClassB, ClassC as C};
@@ -86,10 +82,8 @@ $result = match (true) {
 
 /* testMatchClosure */
 $result = match ($key) {
-    1 => function ($a, $b) {
-    },
-    2 => function ($b, $c) {
-    },
+    1 => function($a, $b) {},
+    2 => function($b, $c) {},
 };
 
 /* testMatchArray */

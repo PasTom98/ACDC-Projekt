@@ -1,65 +1,44 @@
 <?php
 
 /* testNotAClass */
-interface NotAClass
-{
-}
+interface NotAClass {}
 
 /* testAnonClass */
-$anon = new class () {
-};
+$anon = new class() {};
 
 /* testEnum */
-enum NotAClassEither
-{
-}
+enum NotAClassEither {}
 
 /* testClassWithoutProperties */
-class ClassWithoutProperties
-{
-}
+class ClassWithoutProperties {}
 
 /* testAbstractClass */
-abstract class AbstractClass
-{
-}
+abstract class AbstractClass {}
 
 /* testFinalClass */
-final class FinalClass
-{
-}
+final class FinalClass {}
 
 /* testReadonlyClass */
-readonly class ReadOnlyClass
-{
-}
+readonly class ReadOnlyClass {}
 
 /* testFinalReadonlyClass */
-final readonly class FinalReadOnlyClass extends Foo
-{
-}
+final readonly class FinalReadOnlyClass extends Foo {}
 
 /* testReadonlyFinalClass */
-readonly /*comment*/ final class ReadOnlyFinalClass
-{
-}
+readonly /*comment*/ final class ReadOnlyFinalClass {}
 
 /* testAbstractReadonlyClass */
-abstract readonly class AbstractReadOnlyClass
-{
-}
+abstract readonly class AbstractReadOnlyClass {}
 
 /* testReadonlyAbstractClass */
-readonly abstract class ReadOnlyAbstractClass
-{
-}
+readonly
+abstract
+class ReadOnlyAbstractClass {}
 
 /* testWithCommentsAndNewLines */
 abstract
     /* comment */
-class ClassWithCommentsAndNewLines
-{
-}
+    class ClassWithCommentsAndNewLines {}
 
 /* testWithDocblockWithoutProperties */
 /**
@@ -69,15 +48,11 @@ class ClassWithCommentsAndNewLines
  *
  * @phpcs:disable Standard.Cat.SniffName -- Just because.
  */
-class ClassWithDocblock
-{
-}
+class ClassWithDocblock {}
 
 /* testParseErrorAbstractFinal */
 final /* comment */
 
-abstract // Intentional parse error, class cannot both be final and abstract.
+    abstract // Intentional parse error, class cannot both be final and abstract.
 
-class AbstractFinal
-{
-}
+        class AbstractFinal {}

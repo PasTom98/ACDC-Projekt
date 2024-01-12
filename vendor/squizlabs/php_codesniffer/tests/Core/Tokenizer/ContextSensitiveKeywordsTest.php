@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the conversion of context sensitive keywords to T_STRING.
  *
@@ -15,6 +14,8 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class ContextSensitiveKeywordsTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test that context sensitive keyword is tokenized as string when it should be string.
      *
@@ -33,6 +34,7 @@ class ContextSensitiveKeywordsTest extends AbstractMethodUnitTest
 
         $this->assertSame(T_STRING, $tokens[$token]['code']);
         $this->assertSame('T_STRING', $tokens[$token]['type']);
+
     }//end testStrings()
 
 
@@ -148,6 +150,7 @@ class ContextSensitiveKeywordsTest extends AbstractMethodUnitTest
             ['/* testClassInstantiationTrueIsString */'],
             ['/* testClassInstantiationNullIsString */'],
         ];
+
     }//end dataStrings()
 
 
@@ -173,6 +176,7 @@ class ContextSensitiveKeywordsTest extends AbstractMethodUnitTest
 
         $this->assertSame(constant($expectedTokenType), $tokens[$token]['code']);
         $this->assertSame($expectedTokenType, $tokens[$token]['type']);
+
     }//end testKeywords()
 
 
@@ -576,5 +580,8 @@ class ContextSensitiveKeywordsTest extends AbstractMethodUnitTest
                 'T_NULL',
             ],
         ];
+
     }//end dataKeywords()
+
+
 }//end class

@@ -1,0 +1,32 @@
+version: '3'
+services:
+  webserver:
+    depends_on:
+      - db
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - "..:/var/www"
+    ports:
+      - 8081:80
+    networks:
+      - acdc_lamp
+
+  db:
+    image: mysql:latest
+    volumes:
+      - ../data:/docker-entrypoint-initdb.d
+    ports:
+      - 3308:3306
+    environment:
+      MYSQL_DATABASE: ACDC_LAMP
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: adm1n
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    networks:
+      - acdc_lamp
+
+networks:
+  acdc_lamp:
+    driver: bridge
+    

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests to verify that the "explain" command functions as expected.
  *
@@ -21,6 +20,8 @@ use PHPUnit\Framework\TestCase;
  */
 class ExplainTest extends TestCase
 {
+
+
     /**
      * Test the output of the "explain" command.
      *
@@ -33,24 +34,27 @@ class ExplainTest extends TestCase
         $ruleset = new Ruleset($config);
 
         $expected  = PHP_EOL;
-        $expected .= 'The PSR1 standard contains 8 sniffs' . PHP_EOL . PHP_EOL;
-        $expected .= 'Generic (4 sniffs)' . PHP_EOL;
-        $expected .= '------------------' . PHP_EOL;
-        $expected .= '  Generic.Files.ByteOrderMark' . PHP_EOL;
-        $expected .= '  Generic.NamingConventions.UpperCaseConstantName' . PHP_EOL;
-        $expected .= '  Generic.PHP.DisallowAlternativePHPTags' . PHP_EOL;
-        $expected .= '  Generic.PHP.DisallowShortOpenTag' . PHP_EOL . PHP_EOL;
-        $expected .= 'PSR1 (3 sniffs)' . PHP_EOL;
-        $expected .= '---------------' . PHP_EOL;
-        $expected .= '  PSR1.Classes.ClassDeclaration' . PHP_EOL;
-        $expected .= '  PSR1.Files.SideEffects' . PHP_EOL;
-        $expected .= '  PSR1.Methods.CamelCapsMethodName' . PHP_EOL . PHP_EOL;
-        $expected .= 'Squiz (1 sniff)' . PHP_EOL;
-        $expected .= '---------------' . PHP_EOL;
-        $expected .= '  Squiz.Classes.ValidClassName' . PHP_EOL;
+        $expected .= 'The PSR1 standard contains 8 sniffs'.PHP_EOL.PHP_EOL;
+        $expected .= 'Generic (4 sniffs)'.PHP_EOL;
+        $expected .= '------------------'.PHP_EOL;
+        $expected .= '  Generic.Files.ByteOrderMark'.PHP_EOL;
+        $expected .= '  Generic.NamingConventions.UpperCaseConstantName'.PHP_EOL;
+        $expected .= '  Generic.PHP.DisallowAlternativePHPTags'.PHP_EOL;
+        $expected .= '  Generic.PHP.DisallowShortOpenTag'.PHP_EOL.PHP_EOL;
+        $expected .= 'PSR1 (3 sniffs)'.PHP_EOL;
+        $expected .= '---------------'.PHP_EOL;
+        $expected .= '  PSR1.Classes.ClassDeclaration'.PHP_EOL;
+        $expected .= '  PSR1.Files.SideEffects'.PHP_EOL;
+        $expected .= '  PSR1.Methods.CamelCapsMethodName'.PHP_EOL.PHP_EOL;
+        $expected .= 'Squiz (1 sniff)'.PHP_EOL;
+        $expected .= '---------------'.PHP_EOL;
+        $expected .= '  Squiz.Classes.ValidClassName'.PHP_EOL;
 
         $this->expectOutputString($expected);
 
         $ruleset->explain();
+
     }//end testExplain()
+
+
 }//end class

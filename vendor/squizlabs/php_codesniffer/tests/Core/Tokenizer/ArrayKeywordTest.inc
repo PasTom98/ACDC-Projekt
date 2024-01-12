@@ -7,7 +7,7 @@ $var = array();
 $var = array    (1 => 10);
 
 /* testArrayWithComment */
-$var = array /*comment*/ (1 => 10);
+$var = Array /*comment*/ (1 => 10);
 
 /* testNestingArray */
 $var = array(
@@ -16,28 +16,20 @@ $var = array(
         'key' => 'value',
 
         /* testClosureReturnType */
-        'closure' => function ($a) use ($global): array {
-        },
+        'closure' => function($a) use($global) : Array {},
     ),
 );
 
 /* testFunctionDeclarationParamType */
-function foo(array $a)
-{
-}
+function foo(array $a) {}
 
 /* testFunctionDeclarationReturnType */
-function foo($a): int|array|null
-{
-}
+function foo($a) : int|array|null {}
 
-class Bar
-{
+class Bar {
     /* testClassConst */
     const ARRAY = [];
 
     /* testClassMethod */
-    public function array()
-    {
-    }
+    public function array() {}
 }

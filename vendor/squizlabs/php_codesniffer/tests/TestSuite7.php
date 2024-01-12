@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A PHP_CodeSniffer specific test suite for PHPUnit.
  *
@@ -15,6 +14,8 @@ use PHPUnit\Framework\TestResult;
 
 class TestSuite extends PHPUnit_TestSuite
 {
+
+
     /**
      * Runs the tests and collects their result in a TestResult.
      *
@@ -22,10 +23,13 @@ class TestSuite extends PHPUnit_TestSuite
      *
      * @return \PHPUnit\Framework\TestResult
      */
-    public function run(TestResult $result = null): TestResult
+    public function run(TestResult $result=null): TestResult
     {
         $result = parent::run($result);
         printPHPCodeSnifferTestOutput();
         return $result;
+
     }//end run()
+
+
 }//end class

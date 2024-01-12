@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests for the \PHP_CodeSniffer\Files\File:getClassProperties method.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class GetClassPropertiesTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test receiving an expected exception when a non class token is passed.
      *
@@ -40,6 +41,7 @@ class GetClassPropertiesTest extends AbstractMethodUnitTest
 
         $target = $this->getTargetToken($testMarker, $tokenType);
         self::$phpcsFile->getClassProperties($target);
+
     }//end testNotAClassException()
 
 
@@ -66,6 +68,7 @@ class GetClassPropertiesTest extends AbstractMethodUnitTest
                 \T_ENUM,
             ],
         ];
+
     }//end dataNotAClassException()
 
 
@@ -84,6 +87,7 @@ class GetClassPropertiesTest extends AbstractMethodUnitTest
         $class  = $this->getTargetToken($testMarker, \T_CLASS);
         $result = self::$phpcsFile->getClassProperties($class);
         $this->assertSame($expected, $result);
+
     }//end testGetClassProperties()
 
 
@@ -186,5 +190,8 @@ class GetClassPropertiesTest extends AbstractMethodUnitTest
                 ],
             ],
         ];
+
     }//end dataGetClassProperties()
+
+
 }//end class

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the backfill for the PHP >= 8.0 nullsafe object operator.
  *
@@ -15,6 +14,7 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
 {
+
     /**
      * Tokens to search for.
      *
@@ -41,6 +41,7 @@ class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
         $operator = $this->getTargetToken('/* testObjectOperator */', $this->find);
         $this->assertSame(T_OBJECT_OPERATOR, $tokens[$operator]['code'], 'Failed asserting code is object operator');
         $this->assertSame('T_OBJECT_OPERATOR', $tokens[$operator]['type'], 'Failed asserting type is object operator');
+
     }//end testObjectOperator()
 
 
@@ -61,6 +62,7 @@ class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
         $operator = $this->getTargetToken($testMarker, $this->find);
         $this->assertSame(T_NULLSAFE_OBJECT_OPERATOR, $tokens[$operator]['code'], 'Failed asserting code is nullsafe object operator');
         $this->assertSame('T_NULLSAFE_OBJECT_OPERATOR', $tokens[$operator]['type'], 'Failed asserting type is nullsafe object operator');
+
     }//end testNullsafeObjectOperator()
 
 
@@ -77,6 +79,7 @@ class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
             ['/* testNullsafeObjectOperator */'],
             ['/* testNullsafeObjectOperatorWriteContext */'],
         ];
+
     }//end dataNullsafeObjectOperator()
 
 
@@ -92,7 +95,7 @@ class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testTernaryThen($testMarker, $testObjectOperator = false)
+    public function testTernaryThen($testMarker, $testObjectOperator=false)
     {
         $tokens = self::$phpcsFile->getTokens();
 
@@ -105,6 +108,7 @@ class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
             $this->assertSame(T_OBJECT_OPERATOR, $tokens[$next]['code'], 'Failed asserting code is object operator');
             $this->assertSame('T_OBJECT_OPERATOR', $tokens[$next]['type'], 'Failed asserting type is object operator');
         }
+
     }//end testTernaryThen()
 
 
@@ -129,5 +133,8 @@ class NullsafeObjectOperatorTest extends AbstractMethodUnitTest
             ],
             ['/* testLiveCoding */'],
         ];
+
     }//end dataTernaryThen()
+
+
 }//end class

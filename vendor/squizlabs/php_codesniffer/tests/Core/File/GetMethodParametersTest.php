@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests for the \PHP_CodeSniffer\Files\File:getMethodParameters method.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class GetMethodParametersTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Verify pass-by-reference parsing.
      *
@@ -32,7 +33,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPassByReference()
 
 
@@ -54,7 +56,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testArrayHint()
 
 
@@ -76,7 +79,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testVariable()
 
 
@@ -99,7 +103,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testSingleDefaultValue()
 
 
@@ -132,7 +137,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testDefaultValues()
 
 
@@ -164,7 +170,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testTypeHint()
 
 
@@ -186,7 +193,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testSelfTypeHint()
 
 
@@ -218,7 +226,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testNullableTypeHint()
 
 
@@ -241,7 +250,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testBitwiseAndConstantExpressionDefaultValue()
 
 
@@ -273,7 +283,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testArrowFunction()
 
 
@@ -295,7 +306,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8MixedTypeHint()
 
 
@@ -317,7 +329,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8MixedTypeHintNullable()
 
 
@@ -339,7 +352,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testNamespaceOperatorTypeHint()
 
 
@@ -370,7 +384,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesSimple()
 
 
@@ -401,7 +416,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesWithSpreadOperatorAndReference()
 
 
@@ -424,7 +440,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesSimpleWithBitwiseOrInDefault()
 
 
@@ -446,7 +463,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesTwoClasses()
 
 
@@ -468,7 +486,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesAllBaseTypes()
 
 
@@ -490,7 +509,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesAllPseudoTypes()
 
 
@@ -512,7 +532,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8UnionTypesNullable()
 
 
@@ -535,7 +556,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8PseudoTypeNull()
 
 
@@ -558,7 +580,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8PseudoTypeFalse()
 
 
@@ -581,7 +604,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8PseudoTypeFalseAndBool()
 
 
@@ -603,7 +627,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8ObjectAndClass()
 
 
@@ -625,7 +650,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8PseudoTypeIterableAndArray()
 
 
@@ -647,7 +673,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8DuplicateTypeInUnionWhitespaceAndComment()
 
 
@@ -696,7 +723,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'property_readonly'   => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8ConstructorPropertyPromotionNoTypes()
 
 
@@ -743,7 +771,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'property_readonly'   => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8ConstructorPropertyPromotionWithTypes()
 
 
@@ -776,7 +805,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8ConstructorPropertyPromotionAndNormalParam()
 
 
@@ -811,7 +841,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'property_readonly'   => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP81ConstructorPropertyPromotionWithReadOnly()
 
 
@@ -847,7 +878,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'property_readonly'   => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP81ConstructorPropertyPromotionWithOnlyReadOnly()
 
 
@@ -871,7 +903,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'property_readonly'   => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8ConstructorPropertyPromotionGlobalFunction()
 
 
@@ -906,7 +939,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'property_readonly'   => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8ConstructorPropertyPromotionAbstractMethod()
 
 
@@ -930,7 +964,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testCommentsInParameter()
 
 
@@ -993,7 +1028,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testParameterAttributesInFunctionDeclaration()
 
 
@@ -1024,7 +1060,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP8IntersectionTypes()
 
 
@@ -1055,7 +1092,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP81IntersectionTypesWithSpreadOperatorAndReference()
 
 
@@ -1077,7 +1115,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP81MoreIntersectionTypes()
 
 
@@ -1099,7 +1138,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP81IllegalIntersectionTypes()
 
 
@@ -1121,7 +1161,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP81NullableIntersectionTypes()
 
 
@@ -1144,7 +1185,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => true,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP82PseudoTypeTrue()
 
 
@@ -1167,7 +1209,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
             'nullable_type'     => false,
         ];
 
-        $this->getMethodParametersTestHelper('/* ' . __FUNCTION__ . ' */', $expected);
+        $this->getMethodParametersTestHelper('/* '.__FUNCTION__.' */', $expected);
+
     }//end testPHP82PseudoTypeFalseAndTrue()
 
 
@@ -1201,5 +1244,8 @@ class GetMethodParametersTest extends AbstractMethodUnitTest
         }
 
         $this->assertSame($expected, $found);
+
     }//end getMethodParametersTestHelper()
+
+
 }//end class

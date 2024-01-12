@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the tokenization of explicit octal notation to PHP < 8.1.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class BackfillExplicitOctalNotationTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test that explicitly-defined octal values are tokenized as a single number and not as a number and a string.
      *
@@ -35,8 +36,9 @@ class BackfillExplicitOctalNotationTest extends AbstractMethodUnitTest
 
         $this->assertSame($value, $tokens[$number]['content'], 'Content of integer token does not match expectation');
 
-        $this->assertSame($nextToken, $tokens[($number + 1)]['code'], 'Next token is not the expected type, but ' . $tokens[($number + 1)]['type']);
+        $this->assertSame($nextToken, $tokens[($number + 1)]['code'], 'Next token is not the expected type, but '.$tokens[($number + 1)]['type']);
         $this->assertSame($nextContent, $tokens[($number + 1)]['content'], 'Next token did not have the expected contents');
+
     }//end testExplicitOctalNotation()
 
 
@@ -111,5 +113,8 @@ class BackfillExplicitOctalNotationTest extends AbstractMethodUnitTest
                 'nextContent' => 'o',
             ],
         ];
+
     }//end dataExplicitOctalNotation()
+
+
 }//end class

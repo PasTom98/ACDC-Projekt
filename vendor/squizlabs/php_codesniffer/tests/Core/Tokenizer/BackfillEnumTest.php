@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the support of PHP 8.1 "enum" keyword.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class BackfillEnumTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test that the "enum" keyword is tokenized as such.
      *
@@ -63,6 +64,7 @@ class BackfillEnumTest extends AbstractMethodUnitTest
         $this->assertSame($enum, $tokens[$scopeCloser]['scope_condition']);
         $this->assertSame($scopeOpener, $tokens[$scopeCloser]['scope_opener']);
         $this->assertSame($scopeCloser, $tokens[$scopeCloser]['scope_closer']);
+
     }//end testEnums()
 
 
@@ -119,6 +121,7 @@ class BackfillEnumTest extends AbstractMethodUnitTest
                 14,
             ],
         ];
+
     }//end dataEnums()
 
 
@@ -140,6 +143,7 @@ class BackfillEnumTest extends AbstractMethodUnitTest
         $target = $this->getTargetToken($testMarker, [T_ENUM, T_STRING], $testContent);
         $this->assertSame(T_STRING, $tokens[$target]['code']);
         $this->assertSame('T_STRING', $tokens[$target]['type']);
+
     }//end testNotEnums()
 
 
@@ -218,5 +222,8 @@ class BackfillEnumTest extends AbstractMethodUnitTest
                 'enum',
             ],
         ];
+
     }//end dataNotEnums()
+
+
 }//end class

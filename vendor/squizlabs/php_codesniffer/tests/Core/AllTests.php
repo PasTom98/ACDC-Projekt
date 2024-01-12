@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A test class for testing the core.
  *
@@ -17,6 +16,8 @@ use PHPUnit\Framework\TestSuite;
 
 class AllTests
 {
+
+
     /**
      * Prepare the test runner.
      *
@@ -25,6 +26,7 @@ class AllTests
     public static function main()
     {
         TestRunner::run(self::suite());
+
     }//end main()
 
 
@@ -48,11 +50,14 @@ class AllTests
             $class = str_replace(__DIR__, '', $file);
             $class = str_replace('.php', '', $class);
             $class = str_replace('/', '\\', $class);
-            $class = 'PHP_CodeSniffer\Tests\Core' . $class;
+            $class = 'PHP_CodeSniffer\Tests\Core'.$class;
 
             $suite->addTestSuite($class);
         }
 
         return $suite;
+
     }//end suite()
+
+
 }//end class

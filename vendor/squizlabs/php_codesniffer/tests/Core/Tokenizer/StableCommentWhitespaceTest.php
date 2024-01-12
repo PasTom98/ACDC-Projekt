@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the comment tokenization.
  *
@@ -21,6 +20,8 @@ use PHP_CodeSniffer\Util\Tokens;
 
 class StableCommentWhitespaceTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test that comment tokenization with new lines at the end of the comment is stable.
      *
@@ -44,6 +45,7 @@ class StableCommentWhitespaceTest extends AbstractMethodUnitTest
 
             ++$comment;
         }
+
     }//end testCommentTokenization()
 
 
@@ -1047,5 +1049,8 @@ class StableCommentWhitespaceTest extends AbstractMethodUnitTest
                 ],
             ],
         ];
+
     }//end dataCommentTokenization()
+
+
 }//end class

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests for the \PHP_CodeSniffer\Files\File:findStartOfStatement method.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class FindStartOfStatementTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test a simple assignment.
      *
@@ -25,6 +26,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 5), $found);
+
     }//end testSimpleAssignment()
 
 
@@ -39,6 +41,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 6), $found);
+
     }//end testFunctionCall()
 
 
@@ -53,6 +56,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame($start, $found);
+
     }//end testFunctionCallArgument()
 
 
@@ -67,6 +71,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 6), $found);
+
     }//end testControlStructure()
 
 
@@ -81,6 +86,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 12), $found);
+
     }//end testClosureAssignment()
 
 
@@ -108,6 +114,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame($start, $found);
+
     }//end testHeredocFunctionArg()
 
 
@@ -147,6 +154,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 1), $found);
+
     }//end testSwitch()
 
 
@@ -180,6 +188,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 5), $found);
+
     }//end testStatementAsArrayValue()
 
 
@@ -194,6 +203,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 23), $found);
+
     }//end testUseGroup()
 
 
@@ -208,6 +218,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 9), $found);
+
     }//end testArrowFunctionArrayValue()
 
 
@@ -222,6 +233,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 11), $found);
+
     }//end testStaticArrowFunction()
 
 
@@ -236,6 +248,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 18), $found);
+
     }//end testArrowFunctionReturnValue()
 
 
@@ -251,6 +264,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 8), $found);
+
     }//end testArrowFunctionAsArgument()
 
 
@@ -266,6 +280,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 17), $found);
+
     }//end testArrowFunctionWithArrayAsArgument()
 
 
@@ -280,6 +295,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 1), $found);
+
     }//end testMatchCase()
 
 
@@ -294,6 +310,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame($start, $found);
+
     }//end testMatchDefault()
 
 
@@ -313,6 +330,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 4), $found);
+
     }//end testMatchMultipleCase()
 
 
@@ -332,6 +350,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame($start, $found);
+
     }//end testMatchDefaultComma()
 
 
@@ -346,6 +365,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 6), $found);
+
     }//end testMatchFunctionCall()
 
 
@@ -367,6 +387,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 18), $found);
+
     }//end testMatchFunctionCallArm()
 
 
@@ -387,6 +408,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 10), $found);
+
     }//end testMatchClosure()
 
 
@@ -416,6 +438,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $start += 30;
         $found  = self::$phpcsFile->findStartOfStatement($start);
         $this->assertSame(($start - 26), $found);
+
     }//end testMatchArray()
 
 
@@ -441,6 +464,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 2), $found);
+
     }//end testNestedMatch()
 
 
@@ -456,6 +480,7 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 1), $found);
+
     }//end testOpenTag()
 
 
@@ -471,5 +496,8 @@ class FindStartOfStatementTest extends AbstractMethodUnitTest
         $found  = self::$phpcsFile->findStartOfStatement($start);
 
         $this->assertSame(($start - 1), $found);
+
     }//end testOpenTagWithEcho()
+
+
 }//end class

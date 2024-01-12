@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests that the array keyword is tokenized correctly.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class ArrayKeywordTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test that the array keyword is correctly tokenized as `T_ARRAY`.
      *
@@ -26,19 +27,20 @@ class ArrayKeywordTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testArrayKeyword($testMarker, $testContent = 'array')
+    public function testArrayKeyword($testMarker, $testContent='array')
     {
         $tokens = self::$phpcsFile->getTokens();
 
         $token      = $this->getTargetToken($testMarker, [T_ARRAY, T_STRING], $testContent);
         $tokenArray = $tokens[$token];
 
-        $this->assertSame(T_ARRAY, $tokenArray['code'], 'Token tokenized as ' . $tokenArray['type'] . ', not T_ARRAY (code)');
-        $this->assertSame('T_ARRAY', $tokenArray['type'], 'Token tokenized as ' . $tokenArray['type'] . ', not T_ARRAY (type)');
+        $this->assertSame(T_ARRAY, $tokenArray['code'], 'Token tokenized as '.$tokenArray['type'].', not T_ARRAY (code)');
+        $this->assertSame('T_ARRAY', $tokenArray['type'], 'Token tokenized as '.$tokenArray['type'].', not T_ARRAY (type)');
 
         $this->assertArrayHasKey('parenthesis_owner', $tokenArray, 'Parenthesis owner is not set');
         $this->assertArrayHasKey('parenthesis_opener', $tokenArray, 'Parenthesis opener is not set');
         $this->assertArrayHasKey('parenthesis_closer', $tokenArray, 'Parenthesis closer is not set');
+
     }//end testArrayKeyword()
 
 
@@ -61,6 +63,7 @@ class ArrayKeywordTest extends AbstractMethodUnitTest
             'nested: outer array'                   => ['/* testNestingArray */'],
             'nested: inner array'                   => ['/* testNestedArray */'],
         ];
+
     }//end dataArrayKeyword()
 
 
@@ -76,19 +79,20 @@ class ArrayKeywordTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testArrayType($testMarker, $testContent = 'array')
+    public function testArrayType($testMarker, $testContent='array')
     {
         $tokens = self::$phpcsFile->getTokens();
 
         $token      = $this->getTargetToken($testMarker, [T_ARRAY, T_STRING], $testContent);
         $tokenArray = $tokens[$token];
 
-        $this->assertSame(T_STRING, $tokenArray['code'], 'Token tokenized as ' . $tokenArray['type'] . ', not T_STRING (code)');
-        $this->assertSame('T_STRING', $tokenArray['type'], 'Token tokenized as ' . $tokenArray['type'] . ', not T_STRING (type)');
+        $this->assertSame(T_STRING, $tokenArray['code'], 'Token tokenized as '.$tokenArray['type'].', not T_STRING (code)');
+        $this->assertSame('T_STRING', $tokenArray['type'], 'Token tokenized as '.$tokenArray['type'].', not T_STRING (type)');
 
         $this->assertArrayNotHasKey('parenthesis_owner', $tokenArray, 'Parenthesis owner is set');
         $this->assertArrayNotHasKey('parenthesis_opener', $tokenArray, 'Parenthesis opener is set');
         $this->assertArrayNotHasKey('parenthesis_closer', $tokenArray, 'Parenthesis closer is set');
+
     }//end testArrayType()
 
 
@@ -109,6 +113,7 @@ class ArrayKeywordTest extends AbstractMethodUnitTest
             'function param type'        => ['/* testFunctionDeclarationParamType */'],
             'function union return type' => ['/* testFunctionDeclarationReturnType */'],
         ];
+
     }//end dataArrayType()
 
 
@@ -125,19 +130,20 @@ class ArrayKeywordTest extends AbstractMethodUnitTest
      *
      * @return void
      */
-    public function testNotArrayKeyword($testMarker, $testContent = 'array')
+    public function testNotArrayKeyword($testMarker, $testContent='array')
     {
         $tokens = self::$phpcsFile->getTokens();
 
         $token      = $this->getTargetToken($testMarker, [T_ARRAY, T_STRING], $testContent);
         $tokenArray = $tokens[$token];
 
-        $this->assertSame(T_STRING, $tokenArray['code'], 'Token tokenized as ' . $tokenArray['type'] . ', not T_STRING (code)');
-        $this->assertSame('T_STRING', $tokenArray['type'], 'Token tokenized as ' . $tokenArray['type'] . ', not T_STRING (type)');
+        $this->assertSame(T_STRING, $tokenArray['code'], 'Token tokenized as '.$tokenArray['type'].', not T_STRING (code)');
+        $this->assertSame('T_STRING', $tokenArray['type'], 'Token tokenized as '.$tokenArray['type'].', not T_STRING (type)');
 
         $this->assertArrayNotHasKey('parenthesis_owner', $tokenArray, 'Parenthesis owner is set');
         $this->assertArrayNotHasKey('parenthesis_opener', $tokenArray, 'Parenthesis opener is set');
         $this->assertArrayNotHasKey('parenthesis_closer', $tokenArray, 'Parenthesis closer is set');
+
     }//end testNotArrayKeyword()
 
 
@@ -157,5 +163,8 @@ class ArrayKeywordTest extends AbstractMethodUnitTest
             ],
             'class-method-name'   => ['/* testClassMethod */'],
         ];
+
     }//end dataNotArrayKeyword()
+
+
 }//end class

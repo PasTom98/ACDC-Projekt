@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A test class for running all PHP_CodeSniffer unit tests.
  *
@@ -32,6 +31,8 @@ if ($phpunit7 === true) {
 
 class PHP_CodeSniffer_AllTests
 {
+
+
     /**
      * Add all PHP_CodeSniffer test suites into a single test suite.
      *
@@ -50,5 +51,8 @@ class PHP_CodeSniffer_AllTests
         $suite->addTest(Standards\AllSniffs::suite());
 
         return $suite;
+
     }//end suite()
+
+
 }//end class

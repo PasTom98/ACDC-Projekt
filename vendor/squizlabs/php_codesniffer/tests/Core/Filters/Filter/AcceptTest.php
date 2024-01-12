@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests for the \PHP_CodeSniffer\Filters\Filter::accept method.
  *
@@ -18,6 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 class AcceptTest extends TestCase
 {
+
     /**
      * The Config object.
      *
@@ -42,9 +42,10 @@ class AcceptTest extends TestCase
      */
     public static function initializeConfigAndRuleset()
     {
-        $standard      = __DIR__ . '/' . basename(__FILE__, '.php') . '.xml';
+        $standard      = __DIR__.'/'.basename(__FILE__, '.php').'.xml';
         self::$config  = new Config(["--standard=$standard", "--ignore=*/somethingelse/*"]);
         self::$ruleset = new Ruleset(self::$config);
+
     }//end initializeConfigAndRuleset()
 
 
@@ -70,6 +71,7 @@ class AcceptTest extends TestCase
         }
 
         $this->assertEquals($expectedOutput, $files);
+
     }//end testExcludePatterns()
 
 
@@ -125,5 +127,8 @@ class AcceptTest extends TestCase
         }
 
         return $testCases;
+
     }//end dataExcludePatterns()
+
+
 }//end class

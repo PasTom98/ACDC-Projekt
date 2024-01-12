@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the tokenization of goto declarations and statements.
  *
@@ -22,6 +21,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
  */
 class HeredocNowdocCloserTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Initialize & tokenize \PHP_CodeSniffer\Files\File with code from the test case file.
      *
@@ -43,14 +44,15 @@ class HeredocNowdocCloserTest extends AbstractMethodUnitTest
         // Default to a file with the same name as the test class. Extension is property based.
         $relativeCN     = str_replace(__NAMESPACE__, '', get_called_class());
         $relativePath   = str_replace('\\', DIRECTORY_SEPARATOR, $relativeCN);
-        $pathToTestFile = realpath(__DIR__) . $relativePath . '.' . static::$fileExtension;
+        $pathToTestFile = realpath(__DIR__).$relativePath.'.'.static::$fileExtension;
 
         // Make sure the file gets parsed correctly based on the file type.
-        $contents  = 'phpcs_input_file: ' . $pathToTestFile . PHP_EOL;
+        $contents  = 'phpcs_input_file: '.$pathToTestFile.PHP_EOL;
         $contents .= file_get_contents($pathToTestFile);
 
         self::$phpcsFile = new DummyFile($contents, $ruleset, $config);
         self::$phpcsFile->process();
+
     }//end initializeFile()
 
 
@@ -80,6 +82,7 @@ class HeredocNowdocCloserTest extends AbstractMethodUnitTest
             $this->assertArrayHasKey($key, $tokens[$closer], "Key $key not found in the token array.");
             $this->assertSame($value, $tokens[$closer][$key], "Value for key $key does not match expectation.");
         }
+
     }//end testHeredocNowdocCloserTabReplacement()
 
 
@@ -142,5 +145,8 @@ class HeredocNowdocCloserTest extends AbstractMethodUnitTest
                 ],
             ],
         ];
+
     }//end dataHeredocNowdocCloserTabReplacement()
+
+
 }//end class

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Test fixture.
  *
@@ -15,6 +14,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 #[AllowDynamicProperties]
 class SetPropertyNotAllowedViaAttributeSniff implements Sniff
 {
+
     public function register()
     {
         return [T_WHITESPACE];

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests for the \PHP_CodeSniffer\Config reportWidth value.
  *
@@ -16,6 +15,8 @@ use ReflectionProperty;
 
 class ReportWidthTest extends TestCase
 {
+
+
     /**
      * Set static properties in the Config class to prevent tests influencing each other.
      *
@@ -35,6 +36,7 @@ class ReportWidthTest extends TestCase
         // from being read and influencing the tests.
         self::setStaticProperty('configData', []);
         self::setStaticProperty('configDataFile', '');
+
     }//end cleanConfig()
 
 
@@ -48,6 +50,7 @@ class ReportWidthTest extends TestCase
     public function resetConfig()
     {
         $_SERVER['argv'] = [];
+
     }//end resetConfig()
 
 
@@ -66,6 +69,7 @@ class ReportWidthTest extends TestCase
         self::setStaticProperty('configData', null);
         self::setStaticProperty('configDataFile', null);
         $_SERVER['argv'] = [];
+
     }//end resetConfigToDefaults()
 
 
@@ -81,6 +85,7 @@ class ReportWidthTest extends TestCase
         // Can't test the exact value as "auto" will resolve differently depending on the machine running the tests.
         $this->assertTrue(is_int($config->reportWidth), 'Report width is not an integer');
         $this->assertGreaterThan(0, $config->reportWidth, 'Report width is not greater than 0');
+
     }//end testReportWidthDefault()
 
 
@@ -103,6 +108,7 @@ class ReportWidthTest extends TestCase
         // Can't test the exact value as "auto" will resolve differently depending on the machine running the tests.
         $this->assertTrue(is_int($config->reportWidth), 'Report width is not an integer');
         $this->assertGreaterThan(0, $config->reportWidth, 'Report width is not greater than 0');
+
     }//end testReportWidthWillBeSetFromAutoWhenNotFoundInConfFile()
 
 
@@ -122,6 +128,7 @@ class ReportWidthTest extends TestCase
 
         $config = new Config();
         $this->assertSame(120, $config->reportWidth);
+
     }//end testReportWidthCanBeSetFromConfFile()
 
 
@@ -139,6 +146,7 @@ class ReportWidthTest extends TestCase
 
         $config = new Config();
         $this->assertSame(100, $config->reportWidth);
+
     }//end testReportWidthCanBeSetFromCLI()
 
 
@@ -157,6 +165,7 @@ class ReportWidthTest extends TestCase
 
         $config = new Config();
         $this->assertSame(100, $config->reportWidth);
+
     }//end testReportWidthWhenSetFromCLIFirstValuePrevails()
 
 
@@ -184,6 +193,7 @@ class ReportWidthTest extends TestCase
 
         $config = new Config($cliArgs);
         $this->assertSame(180, $config->reportWidth);
+
     }//end testReportWidthSetFromCLIOverrulesConfFile()
 
 
@@ -200,6 +210,7 @@ class ReportWidthTest extends TestCase
         // Can't test the exact value as "auto" will resolve differently depending on the machine running the tests.
         $this->assertTrue(is_int($config->reportWidth), 'Report width is not an integer');
         $this->assertGreaterThan(0, $config->reportWidth, 'Report width is not greater than 0');
+
     }//end testReportWidthInputHandlingForAuto()
 
 
@@ -219,6 +230,7 @@ class ReportWidthTest extends TestCase
         $config->reportWidth = $input;
 
         $this->assertSame($expected, $config->reportWidth);
+
     }//end testReportWidthInputHandling()
 
 
@@ -267,6 +279,7 @@ class ReportWidthTest extends TestCase
                 'expected' => 180,
             ],
         ];
+
     }//end dataReportWidthInputHandling()
 
 
@@ -284,5 +297,8 @@ class ReportWidthTest extends TestCase
         $property->setAccessible(true);
         $property->setValue(null, $value);
         $property->setAccessible(false);
+
     }//end setStaticProperty()
+
+
 }//end class

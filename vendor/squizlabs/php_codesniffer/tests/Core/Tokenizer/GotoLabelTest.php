@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests the tokenization of goto declarations and statements.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class GotoLabelTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Verify that the label in a goto statement is tokenized as T_STRING.
      *
@@ -33,6 +34,7 @@ class GotoLabelTest extends AbstractMethodUnitTest
 
         $this->assertTrue(is_int($label));
         $this->assertSame($testContent, $tokens[$label]['content']);
+
     }//end testGotoStatement()
 
 
@@ -55,6 +57,7 @@ class GotoLabelTest extends AbstractMethodUnitTest
                 'end',
             ],
         ];
+
     }//end dataGotoStatement()
 
 
@@ -77,6 +80,7 @@ class GotoLabelTest extends AbstractMethodUnitTest
 
         $this->assertTrue(is_int($label));
         $this->assertSame($testContent, $tokens[$label]['content']);
+
     }//end testGotoDeclaration()
 
 
@@ -99,6 +103,7 @@ class GotoLabelTest extends AbstractMethodUnitTest
                 'end:',
             ],
         ];
+
     }//end dataGotoDeclaration()
 
 
@@ -120,6 +125,7 @@ class GotoLabelTest extends AbstractMethodUnitTest
 
         $this->assertSame(T_STRING, $tokens[$target]['code']);
         $this->assertSame('T_STRING', $tokens[$target]['type']);
+
     }//end testNotAGotoDeclaration()
 
 
@@ -162,5 +168,8 @@ class GotoLabelTest extends AbstractMethodUnitTest
                 'Suit',
             ],
         ];
+
     }//end dataNotAGotoDeclaration()
+
+
 }//end class

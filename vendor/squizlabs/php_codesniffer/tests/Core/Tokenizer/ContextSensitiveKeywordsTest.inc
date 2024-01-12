@@ -87,7 +87,9 @@ class ContextSensitiveKeywords
 namespace /* testKeywordAfterNamespaceShouldBeString */ class;
 namespace /* testNamespaceNameIsString1 */ my\ /* testNamespaceNameIsString2 */ class\ /* testNamespaceNameIsString3 */ foreach;
 
-/* testAbstractIsKeyword */ abstract /* testClassIsKeyword */ class SomeClass extends SomeParent implements SomeInterface /* testExtendsIsKeyword */ /* testImplementsIsKeyword */
+/* testAbstractIsKeyword */ abstract /* testClassIsKeyword */ class SomeClass
+    /* testExtendsIsKeyword */ extends SomeParent
+    /* testImplementsIsKeyword */ implements SomeInterface
 {
     /* testUseIsKeyword */ use SomeTrait, OtherTrait {
         SomeTrait::a /* testInsteadOfIsKeyword */ insteadof A;
@@ -118,59 +120,49 @@ namespace /* testNamespaceNameIsString1 */ my\ /* testNamespaceNameIsString2 */ 
     }
 }
 
-/* testInterfaceIsKeyword */ interface SomeInterface
-{
-}
-/* testTraitIsKeyword */ trait SomeTrait
-{
-}
-/* testEnumIsKeyword */ enum SomeEnum
-{
-}
+/* testInterfaceIsKeyword */ interface SomeInterface {}
+/* testTraitIsKeyword */ trait SomeTrait {}
+/* testEnumIsKeyword */ enum SomeEnum {}
 
 $object = /* testNewIsKeyword */ new SomeClass();
 $object /* testInstanceOfIsKeyword */ instanceof SomeClass;
 $copy = /* testCloneIsKeyword */ clone $object;
 
-/* testIfIsKeyword */ if (/* testEmptyIsKeyword */ empty($a)) :
-/* testElseIfIsKeyword */
-elseif (false) :
-/* testElseIsKeyword */
-else :
-/* testEndIfIsKeyword */
-endif;
+/* testIfIsKeyword */ if (/* testEmptyIsKeyword */ empty($a)):
+/* testElseIfIsKeyword */ elseif (false):
+/* testElseIsKeyword */ else:
+/* testEndIfIsKeyword */ endif;
 
-/* testForIsKeyword */ for ($i = 0; $i < 100; $i++) :
-/* testEndForIsKeyword */
-endfor;
+/* testForIsKeyword */ for ($i = 0; $i < 100; $i++):
+/* testEndForIsKeyword */ endfor;
 
-/* testForeachIsKeyword */ foreach ($array as $value) :
-/* testEndForeachIsKeyword */
-endforeach;
+/* testForeachIsKeyword */ foreach ($array as $value):
+/* testEndForeachIsKeyword */ endforeach;
 
-/* testSwitchIsKeyword */ switch (true) :
+/* testSwitchIsKeyword */ switch (true):
     /* testCaseIsKeyword */case false:
         /* testBreakIsKeyword */
-                               break;
+        break;
     /* testDefaultIsKeyword */ default:
         /* testContinueIsKeyword */
-                                   continue;
-/* testEndSwitchIsKeyword */
-endswitch;
+        continue;
+/* testEndSwitchIsKeyword */ endswitch;
 
 /* testDoIsKeyword */ do {
+
 } while (false);
 
-/* testWhileIsKeyword */ while (false) :
-/* testEndWhileIsKeyword */
-endwhile;
+/* testWhileIsKeyword */ while (false):
+/* testEndWhileIsKeyword */ endwhile;
 
 /* testTryIsKeyword */
 try {
     /* testThrowIsKeyword */
     throw new Exception();
 } /* testCatchIsKeyword */ catch (Exception $e) {
+
 } /* testFinallyIsKeyword */ finally {
+
 }
 
 /* testGlobalIsKeyword */
@@ -218,67 +210,46 @@ function () {
 };
 
 /* testDeclareIsKeyword */ declare(ticks=1):
-/* testEndDeclareIsKeyword */
-enddeclare;
+/* testEndDeclareIsKeyword */ enddeclare;
 
 if (true /* testAndIsKeyword */ and false /* testOrIsKeyword */ or null /* testXorIsKeyword */ xor 0) {
+
 }
 
-$anonymousClass = new /* testAnonymousClassIsKeyword */ class {
-};
-$anonymousClass2 = new class /* testExtendsInAnonymousClassIsKeyword */ extends SomeParent {
-};
-$anonymousClass3 = new class /* testImplementsInAnonymousClassIsKeyword */ implements SomeInterface {
-};
+$anonymousClass = new /* testAnonymousClassIsKeyword */ class {};
+$anonymousClass2 = new class /* testExtendsInAnonymousClassIsKeyword */ extends SomeParent {};
+$anonymousClass3 = new class /* testImplementsInAnonymousClassIsKeyword */ implements SomeInterface {};
 
 $instantiated1 = new /* testClassInstantiationParentIsKeyword */ parent();
-$instantiated2 = new /* testClassInstantiationSelfIsKeyword */ self();
+$instantiated2 = new /* testClassInstantiationSelfIsKeyword */ SELF;
 $instantiated3 = new /* testClassInstantiationStaticIsKeyword */ static($param);
 
-class Foo extends /* testNamespaceInNameIsKeyword */ namespace \Exception
-{
-}
+class Foo extends /* testNamespaceInNameIsKeyword */ namespace\Exception
+{}
 
-function /* testKeywordAfterFunctionShouldBeString */ eval()
-{
-}
-function /* testKeywordAfterFunctionByRefShouldBeString */ &switch()
-{
-}
+function /* testKeywordAfterFunctionShouldBeString */ eval() {}
+function /* testKeywordAfterFunctionByRefShouldBeString */ &switch() {}
 
-function /* testKeywordSelfAfterFunctionByRefShouldBeString */ &self()
-{
-}
-function /* testKeywordStaticAfterFunctionByRefShouldBeString */ &static()
-{
-}
-function /* testKeywordParentAfterFunctionByRefShouldBeString */ &parent()
-{
-}
-function /* testKeywordFalseAfterFunctionByRefShouldBeString */ &false()
-{
-}
-function /* testKeywordTrueAfterFunctionByRefShouldBeString */ & true()
-{
-}
-function /* testKeywordNullAfterFunctionByRefShouldBeString */ &NULL()
-{
-}
+function /* testKeywordSelfAfterFunctionByRefShouldBeString */ &self() {}
+function /* testKeywordStaticAfterFunctionByRefShouldBeString */ &static() {}
+function /* testKeywordParentAfterFunctionByRefShouldBeString */ &parent() {}
+function /* testKeywordFalseAfterFunctionByRefShouldBeString */ &false() {}
+function /* testKeywordTrueAfterFunctionByRefShouldBeString */ & true () {}
+function /* testKeywordNullAfterFunctionByRefShouldBeString */ &NULL() {}
 
 /* testKeywordAsFunctionCallNameShouldBeStringSelf */ self();
 /* testKeywordAsFunctionCallNameShouldBeStringStatic */ static();
 $obj-> /* testKeywordAsMethodCallNameShouldBeStringStatic */ static();
 /* testKeywordAsFunctionCallNameShouldBeStringParent */ parent();
 /* testKeywordAsFunctionCallNameShouldBeStringFalse */ false();
-/* testKeywordAsFunctionCallNameShouldBeStringTrue */ True();
-/* testKeywordAsFunctionCallNameShouldBeStringNull */ null();
+/* testKeywordAsFunctionCallNameShouldBeStringTrue */ True ();
+/* testKeywordAsFunctionCallNameShouldBeStringNull */ null /*comment*/ ();
 
 $instantiated4 = new /* testClassInstantiationFalseIsString */ False();
-$instantiated5 = new /* testClassInstantiationTrueIsString */ true();
+$instantiated5 = new /* testClassInstantiationTrueIsString */ true ();
 $instantiated6 = new /* testClassInstantiationNullIsString */ null();
 
-$function = /* testStaticIsKeywordBeforeClosure */ static function (/* testStaticIsKeywordWhenParamType */ static $param) {
-};
+$function = /* testStaticIsKeywordBeforeClosure */ static function(/* testStaticIsKeywordWhenParamType */ static $param) {};
 $arrow = /* testStaticIsKeywordBeforeArrow */ static fn(): /* testStaticIsKeywordWhenReturnType */ static => 10;
 
 function standAloneFalseTrueNullTypesAndMore(
@@ -286,10 +257,8 @@ function standAloneFalseTrueNullTypesAndMore(
     /* testTrueIsKeywordAsParamType */ true $paramB,
     /* testNullIsKeywordAsParamType */ null $paramC,
 ) /* testFalseIsKeywordAsReturnType */ false | /* testTrueIsKeywordAsReturnType */ true | /* testNullIsKeywordAsReturnType */ null {
-    if (
-        $a === /* testFalseIsKeywordInComparison */ false
-        || $a === /* testTrueIsKeywordInComparison */ true
-        || $a === /* testNullIsKeywordInComparison */ null
-    ) {
-    }
+    if ($a === /* testFalseIsKeywordInComparison */ false
+    || $a === /* testTrueIsKeywordInComparison */ true
+    || $a === /* testNullIsKeywordInComparison */ null
+    ) {}
 }

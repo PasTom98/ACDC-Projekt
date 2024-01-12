@@ -33,11 +33,11 @@ $heredoc = <<<"END"
 		  a
 		b
 	  c
-     END;
+	 END;
 
 /* testNowdocCloserTabIndent */
 $nowdoc = <<<'END'
 	  a
 	 b
 	c
-    END;
+	END;

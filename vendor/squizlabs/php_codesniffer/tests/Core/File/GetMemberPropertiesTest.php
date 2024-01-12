@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Tests for the \PHP_CodeSniffer\Files\File::getMemberProperties method.
  *
@@ -14,6 +13,8 @@ use PHP_CodeSniffer\Tests\Core\AbstractMethodUnitTest;
 
 class GetMemberPropertiesTest extends AbstractMethodUnitTest
 {
+
+
     /**
      * Test the getMemberProperties() method.
      *
@@ -33,6 +34,7 @@ class GetMemberPropertiesTest extends AbstractMethodUnitTest
         unset($result['type_token'], $result['type_end_token']);
 
         $this->assertSame($expected, $result);
+
     }//end testGetMemberProperties()
 
 
@@ -848,6 +850,7 @@ class GetMemberPropertiesTest extends AbstractMethodUnitTest
             ],
 
         ];
+
     }//end dataGetMemberProperties()
 
 
@@ -876,6 +879,7 @@ class GetMemberPropertiesTest extends AbstractMethodUnitTest
 
         $variable = $this->getTargetToken($identifier, T_VARIABLE);
         $result   = self::$phpcsFile->getMemberProperties($variable);
+
     }//end testNotClassPropertyException()
 
 
@@ -897,6 +901,7 @@ class GetMemberPropertiesTest extends AbstractMethodUnitTest
             ['/* testNestedMethodParam 2 */'],
             ['/* testEnumMethodParamNotProperty */'],
         ];
+
     }//end dataNotClassProperty()
 
 
@@ -921,5 +926,8 @@ class GetMemberPropertiesTest extends AbstractMethodUnitTest
 
         $next   = $this->getTargetToken('/* testNotAVariable */', T_RETURN);
         $result = self::$phpcsFile->getMemberProperties($next);
+
     }//end testNotAVariableException()
+
+
 }//end class

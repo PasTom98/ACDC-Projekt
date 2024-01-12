@@ -9,19 +9,16 @@ marker:
 echo 'Bar';
 
 /* testGotoStatementInLoop */
-for ($i = 0,$j = 50; $i < 100; $i++) {
-    while ($j--) {
-        if ($j == 17) {
-            goto end;
-        }
-    }
+for($i=0,$j=50; $i<100; $i++) {
+  while($j--) {
+    if($j==17) GOTO end;
+  }
 }
 echo "i = $i";
 ?>
 <div><?php $cond ? TEST_A : TEST_B ?></div>
 
 <?php
-
 /* testGotoDeclarationOutsideLoop */
 end:
 echo 'j hit 17';
@@ -56,6 +53,4 @@ switch (true) {
 }
 
 /* testNotGotoDeclarationEnumWithType */
-enum Suit: string implements Colorful, CardGame
-{
-}
+enum Suit: string implements Colorful, CardGame {}

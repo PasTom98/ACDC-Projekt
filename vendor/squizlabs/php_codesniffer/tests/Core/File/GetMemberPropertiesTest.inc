@@ -42,7 +42,7 @@ class TestMemberProperties
     public static $varH = true;
 
     /* testProtectedStatic */
-    protected static $varI = true;
+    static protected $varI = true;
 
     /* testPrivateStatic */
     private static $varJ = true;
@@ -66,7 +66,7 @@ class TestMemberProperties
      * @phpcs:ignore Standard.Category.Sniff -- because
      * @var boolean
      */
-    protected static $varI = true;
+    static protected $varI = true;
 
     /* testPrivateStaticWithDocblock */
     /**
@@ -118,8 +118,7 @@ class TestMemberProperties
 
 
     /* testMethodParam */
-    public function methodName($param)
-    {
+    public function methodName($param) {
         /* testImportedGlobal */
         global $importedGlobal = true;
 
@@ -148,6 +147,7 @@ class TestMemberProperties
     public \MyNamespace /** comment *\/ comment */
            \MyClass /* comment */
            \Foo $foo;
+
 }
 
 interface Base
@@ -163,44 +163,38 @@ $globalVariable = true;
 return;
 
 $a = ( $foo == $bar ? new stdClass() :
-    new class () {
+    new class() {
         /* testNestedProperty 1 */
         public $var = true;
 
         /* testNestedMethodParam 1 */
-        public function something($var = false)
-        {
-        }
+        public function something($var = false) {}
     }
 );
 
-function_call('param', new class {
+function_call( 'param', new class {
     /* testNestedProperty 2 */
     public $year = 2017;
 
     /* testNestedMethodParam 2 */
-    public function __construct($open, $post_id)
-    {
-    }
-}, 10, 2);
+    public function __construct( $open, $post_id ) {}
+}, 10, 2 );
 
-class PHP8Mixed
-{
+class PHP8Mixed {
     /* testPHP8MixedTypeHint */
-    public static mixed $mixed;
+    public static miXed $mixed;
 
     /* testPHP8MixedTypeHintNullable */
     // Intentional fatal error - nullability is not allowed with mixed, but that's not the concern of the method.
     private ?mixed $nullableMixed;
 }
 
-class NSOperatorInType
-{
+class NSOperatorInType {
     /* testNamespaceOperatorTypeHint */
     public ?namespace\Name $prop;
 }
 
-$anon = class () {
+$anon = class() {
     /* testPHP8UnionTypesSimple */
     public int|float $unionTypeSimple;
 
@@ -208,7 +202,7 @@ $anon = class () {
     private MyClassA|\Package\MyClassB $unionTypesTwoClasses;
 
     /* testPHP8UnionTypesAllBaseTypes */
-    protected array|bool|int|float|null|object|string $unionTypesAllBaseTypes;
+    protected array|bool|int|float|NULL|object|string $unionTypesAllBaseTypes;
 
     /* testPHP8UnionTypesAllPseudoTypes */
     // Intentional fatal error - mixing types which cannot be combined, but that's not the concern of the method.
@@ -233,7 +227,7 @@ $anon = class () {
 
     /* testPHP8PseudoTypeFalseAndBool */
     // Intentional fatal error - false pseudotype is not allowed in combination with bool, but that's not the concern of the method.
-    public bool|false $pseudoTypeFalseAndBool;
+    public bool|FALSE $pseudoTypeFalseAndBool;
 
     /* testPHP8ObjectAndClass */
     // Intentional fatal error - object is not allowed in combination with class name, but that's not the concern of the method.
@@ -245,7 +239,7 @@ $anon = class () {
 
     /* testPHP8DuplicateTypeInUnionWhitespaceAndComment */
     // Intentional fatal error - duplicate types are not allowed in union types, but that's not the concern of the method.
-    public int |string| /*comment*/ int $duplicateTypeInUnion;
+    public int |string| /*comment*/ INT $duplicateTypeInUnion;
 
     /* testPHP81Readonly */
     public readonly int $readonly;
@@ -257,7 +251,7 @@ $anon = class () {
     public readonly string|int $readonlyWithUnionType;
 
     /* testPHP81ReadonlyWithUnionTypeWithNull */
-    protected readonly string|null $readonlyWithUnionTypeWithNull;
+    protected ReadOnly string|null $readonlyWithUnionTypeWithNull;
 
     /* testPHP81OnlyReadonlyWithUnionType */
     readonly string|int $onlyReadonly;
@@ -291,13 +285,10 @@ enum Direction implements ArrayAccess
     case Down;
 
     /* testEnumMethodParamNotProperty */
-    public function offsetGet($val)
-    {
-        ...
-    }
+    public function offsetGet($val) { ... }
 }
 
-$anon = class () {
+$anon = class() {
     /* testPHP81IntersectionTypes */
     public Foo&Bar $intersectionType;
 
@@ -313,17 +304,17 @@ $anon = class () {
     public ?Foo&Bar $nullableIntersectionType;
 };
 
-$anon = class () {
+$anon = class() {
     /* testPHP82PseudoTypeTrue */
     public true $pseudoTypeTrue;
 
     /* testPHP82NullablePseudoTypeTrue */
-    protected static ?true $pseudoTypeNullableTrue;
+    static protected ?true $pseudoTypeNullableTrue;
 
     /* testPHP82PseudoTypeTrueInUnion */
     private int|string|true $pseudoTypeTrueInUnion;
 
     /* testPHP82PseudoTypeFalseAndTrue */
     // Intentional fatal error - Type contains both true and false, bool should be used instead, but that's not the concern of the method.
-    readonly true|false $pseudoTypeFalseAndTrue;
+    readonly true|FALSE $pseudoTypeFalseAndTrue;
 };

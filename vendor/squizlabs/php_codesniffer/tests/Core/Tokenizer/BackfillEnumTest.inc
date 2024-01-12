@@ -7,8 +7,7 @@ enum Foo
 }
 
 /* testBackedIntEnum */
-enum Boo: int
-{
+enum Boo: int {
     case ONE = 1;
     case TWO = 1;
 }
@@ -37,24 +36,18 @@ enum ComplexEnum: int implements SomeInterface
 }
 
 /* testEnumWithEnumAsClassName */
-enum /* testEnumAsClassNameAfterEnumKeyword */ Enum
-{
-}
+enum /* testEnumAsClassNameAfterEnumKeyword */ Enum {}
 
 /* testEnumIsCaseInsensitive */
-enum Enum
-{
-}
+EnUm Enum {}
 
 /* testEnumUsedAsClassName */
-class Enum
-{
+class Enum {
     /* testEnumUsedAsClassConstantName */
     const ENUM = 'enum';
 
     /* testEnumUsedAsMethodName */
-    public function enum()
-    {
+    public function enum() {
         // Do something.
 
         /* testEnumUsedAsPropertyName */
@@ -82,7 +75,7 @@ namespace Enum;
 /* testEnumUsedAsPartOfNamespaceName */
 namespace My\Enum\Collection;
 /* testEnumUsedInObjectInitialization */
-$obj = new Enum();
+$obj = new Enum;
 /* testEnumAsFunctionCall */
 $var = enum($a, $b);
 /* testEnumAsFunctionCallWithNamespace */
