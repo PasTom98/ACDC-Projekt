@@ -4,7 +4,7 @@ SHELL = /bin/sh
 
 UID := $(shell id -u)
 GID := $(shell id -g)
-USER: = $(shell whomai)
+USER := $(shell whomai)
 
 export UID
 export GID
