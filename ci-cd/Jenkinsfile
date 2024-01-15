@@ -10,9 +10,9 @@ pipeline{
                     '''
             }
         }
-        stage("Run Tests") {
+        stage("Build docker image") {
             steps {
-                sh 'docker compose run --rm artisan test'
+                sh 'docker compose build ../docker/docker-compose.yml'
             }
         }
     }
