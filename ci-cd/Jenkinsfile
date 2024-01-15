@@ -10,6 +10,12 @@ pipeline{
                     '''
             }
         }
+        stage("Prune Docker data"){
+            steps{
+                sh 'docker system prune -a --volumes -f'
+            }
+
+        }
         stage("Build docker image") {
             steps {
                 dir(docker){
