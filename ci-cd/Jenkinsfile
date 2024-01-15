@@ -12,9 +12,10 @@ pipeline{
         }
         stage("Build docker image") {
             steps {
-                sh 'cd /docker'
+                dir(docker){
                 sh 'docker compose up -d --wait'
                 sh 'docker compose ps'
+                }
             }
         }
     }
