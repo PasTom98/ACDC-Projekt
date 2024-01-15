@@ -13,7 +13,8 @@ pipeline{
         stage("Build docker image") {
             steps {
                 sh 'cd /docker'
-                sh 'docker-compose up --build'
+                sh 'docker compose up -d --wait'
+                sh 'docker compose ps'
             }
         }
     }
