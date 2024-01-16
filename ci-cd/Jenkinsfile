@@ -12,27 +12,30 @@ pipeline{
         }
         stage("Prune Docker data"){
             steps{
-                try {
-                sh 'docker system prune -a --volumes -f'
-                echo 'Pruned docker succesfully'
-                } catch (Exception e) {
-                    echo 'Something went wrong pruning docker data'
+                script {
+                    try {
+                        sh 'docker system prune -a --volumes -f'
+                        echo 'Pruned docker succesfully'
+                    } catch (Exception e) {
+                        echo 'Something went wrong pruning docker data'
+                    }
                 }
-                
             }
 
         }
         stage("Build docker image") {
             steps {
-                try {
-                dir(docker){
-                sh 'docker compose up -d --wait'
-                sh 'docker compose ps'
-                echo 'build docker image successfully'
-                } catch (Exception e) {
-                    echo 'Something went wrong building docker image'
+                script {
+                    try {
+                        dir(docker){
+                        sh 'docker compose up -d --wait'
+                        sh 'docker compose ps'
+                        }
+                        echo 'build docker image successfully'
+                    } catch (Exception e) {
+                        echo 'Something went wrong building docker image'
+                    }
                 }
-                
             }
         }
     }
