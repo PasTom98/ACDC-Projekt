@@ -1,0 +1,7 @@
+version: '3'
+services:
+  buildserver:
+    image: debian:bullseye-slim
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    
