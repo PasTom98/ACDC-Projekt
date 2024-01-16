@@ -1,3 +1,2 @@
-FROM debian:bullseye-slim as buildserver
+FROM rancher/dind:latest
 
-RUN 
