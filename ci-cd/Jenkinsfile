@@ -1,5 +1,7 @@
 pipeline{
-    agent label jenkins-agent
+    agent {
+        label 'jenkins-agent'
+    }
     stages{
         stage("Verify tooling") {
             steps {
