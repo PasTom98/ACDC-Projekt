@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        docker { dockerComposeFile true }
+        docker { image 'rancher/dind:latest' }
     }
     stages{
         stage("Verify tooling") {
