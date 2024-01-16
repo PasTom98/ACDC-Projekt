@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        docker 'jenkins-agent'
+        docker {image 'debian:bullseye-slim'}
     }
     stages{
         stage("Verify tooling") {
