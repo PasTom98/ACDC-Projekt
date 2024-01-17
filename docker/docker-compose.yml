@@ -23,8 +23,6 @@ services:
 
   db:
     image: mysql:latest
-    volumes:
-      - ../data:/docker-entrypoint-initdb.d
     ports:
       - 3308:3306
     environment:
