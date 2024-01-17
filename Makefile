@@ -14,10 +14,10 @@ export USER
 
 
 build:
-        docker-compose -f docker-compose.yml build $(c)
+    docker-compose -f docker-compose.yml build $(c)
 up:
-        docker-compose -f docker-compose.yml up -d $(c)
+    docker-compose -f docker-compose.yml up -d $(c)
 start:
-        docker-compose -f docker-compose.yml start $(c)
+	docker-compose -f docker-compose.yml start $(c)
 down:
-        docker-compose -f docker-compose.yml down $(c)
+	docker-compose -f docker-compose.yml down $(c)
