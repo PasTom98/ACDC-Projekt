@@ -29,9 +29,11 @@ pipeline{
             steps {
                 script {
                     try {
-                        sh 'make build'
-                        sh 'make up'
+                        dir('docker'){
+                        sh 'docker-compose -f ./docker/docker-compose.yml build'
+                        sh 'docker-compose -f ./docker/docker-compose.yml up -d'
                         sh 'docker ps'
+                        }
                         echo 'build docker image successfully'
                     } catch (Exception e) {
                         echo 'Something went wrong building docker image'
