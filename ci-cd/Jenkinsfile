@@ -43,12 +43,14 @@ pipeline{
         }
         stage("Stop docker container after build") {
             steps {
-                try {
-                sh 'docker-compose down'
-                sh 'docker ps'
-                echo 'Stopped container succesfully'
-                } catch (Exception e) {
-                echo 'Something went wron stopping the container'
+                script {
+                    try {
+                    sh 'docker-compose down'
+                    sh 'docker ps'
+                    echo 'Stopped container succesfully'
+                    } catch (Exception e) {
+                    echo 'Something went wron stopping the container'
+                    }
                 }
             }
         }
