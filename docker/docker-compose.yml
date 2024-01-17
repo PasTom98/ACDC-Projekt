@@ -34,6 +34,12 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: adm1n
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - type: bind
+        source: ../data
+        target: /docker-entrypoint-initdb.d
+        bind:
+          propagation: rshared
     networks:
       - acdc_lamp
 
