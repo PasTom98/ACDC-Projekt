@@ -41,7 +41,7 @@ pipeline{
                 }
             }
         }
-        stage("Stop docker container after build") {
+        /**stage("Stop docker container after build") {
             steps {
                 script {
                     try {
@@ -55,7 +55,7 @@ pipeline{
                     }
                 }
             }
-        }
+        }**/
     }
 }
 
