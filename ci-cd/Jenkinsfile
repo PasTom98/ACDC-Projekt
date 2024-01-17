@@ -46,7 +46,9 @@ pipeline{
                 try {
                 sh 'docker-compose down'
                 sh 'docker ps'
-                echo ''
+                echo 'Stopped container succesfully'
+            } catch (Exception e) {
+                echo 'Something went wron stopping the container'
             }
         }
     }
