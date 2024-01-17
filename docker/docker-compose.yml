@@ -11,7 +11,7 @@ services:
         source: "/../."
         target: /var/www
         bind:
-          propagation: shared
+          propagation: rshared
     environment:
       XDEBUG_MODE: develop,debug
       XDEBUG_CONFIG:
