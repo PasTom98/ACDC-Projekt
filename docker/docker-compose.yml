@@ -7,8 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - "..:/var/www"
       - type: bind
+        source: ..
+        target: /var/www
         bind:
           propagation: shared
     environment:
