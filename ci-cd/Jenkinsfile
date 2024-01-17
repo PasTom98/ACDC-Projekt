@@ -50,6 +50,7 @@ pipeline{
                             sh 'docker ps'
                             echo 'Stopped container succesfully'
                         }
+                    }
                     } catch (Exception e) {
                         echo 'Something went wron stopping the container'
                     }
