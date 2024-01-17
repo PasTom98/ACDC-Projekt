@@ -14,4 +14,4 @@ export USER
 
 
 up: 
-	cd ./docker && docker-compose up -d
+	docker-compose -f ./docker/docker-compose.yml up --build -d
