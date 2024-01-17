@@ -8,7 +8,7 @@ pipeline{
                 sh '''
                     docker info
                     docker version
-                    docker compose version
+                    docker-compose version
                     '''
             }
         }
@@ -30,8 +30,8 @@ pipeline{
                 script {
                     try {
                         dir(docker){
-                        sh 'docker compose up -d --wait'
-                        sh 'docker compose ps'
+                        sh 'docker-compose up -d --wait'
+                        sh 'docker-compose ps'
                         }
                         echo 'build docker image successfully'
                     } catch (Exception e) {
