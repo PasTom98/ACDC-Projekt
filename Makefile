@@ -14,4 +14,4 @@ export USER
 
 
 up: 
-	docker-compose up -d
+	cd /docker/ && docker-compose up -d
