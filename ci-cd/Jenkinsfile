@@ -41,5 +41,13 @@ pipeline{
                 }
             }
         }
+        stage("Stop docker container after build") {
+            steps {
+                try {
+                sh 'docker-compose down'
+                sh 'docker ps'
+                echo ''
+            }
+        }
     }
 }
