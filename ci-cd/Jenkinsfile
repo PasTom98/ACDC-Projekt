@@ -29,7 +29,7 @@ pipeline{
             steps {
                 script {
                     try {
-                        dir(docker){
+                        dir('docker'){
                         sh 'docker-compose up -d --wait'
                         sh 'docker-compose ps'
                         }
