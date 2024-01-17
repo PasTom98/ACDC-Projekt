@@ -4,6 +4,7 @@ services:
     depends_on:
       - db
     build:
+      context: .
       dockerfile: Dockerfile
     volumes:
       - "..:/var/www"
