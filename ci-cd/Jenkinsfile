@@ -29,7 +29,7 @@ pipeline{
             steps {
                 script {
                     try {
-                        make up
+                        sh 'make up'
                         sh 'docker ps'
                         echo 'build docker image successfully'
                     } catch (Exception e) {
