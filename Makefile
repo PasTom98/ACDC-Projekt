@@ -13,5 +13,11 @@ export GID
 export USER
 
 
-up: 
-	docker-compose -f ./docker/docker-compose.yml up --build -d
+build:
+        docker-compose -f docker-compose.yml build $(c)
+up:
+        docker-compose -f docker-compose.yml up -d $(c)
+start:
+        docker-compose -f docker-compose.yml start $(c)
+down:
+        docker-compose -f docker-compose.yml down $(c)

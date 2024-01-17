@@ -29,6 +29,7 @@ pipeline{
             steps {
                 script {
                     try {
+                        sh 'make build'
                         sh 'make up'
                         sh 'docker ps'
                         echo 'build docker image successfully'
