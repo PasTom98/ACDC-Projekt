@@ -1,5 +1,7 @@
 pipeline{
-    agent { dockerfile true }
+    agent { 
+        label 'jenkins_agent'
+    }
     stages{
         stage("Verify tooling") {
             steps {
