@@ -30,8 +30,9 @@ pipeline{
                 script {
                     try {
                         dir('docker'){
-                        sh 'docker-compose up -d --wait'
-                        sh 'docker-compose ps'
+                        sh 'docker-compose build'
+                        sh 'docker-compose up -d'
+                        sh 'docker ps'
                         }
                         echo 'build docker image successfully'
                     } catch (Exception e) {
