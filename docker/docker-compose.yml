@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: bind
-        source: ../
-        target: /var/www
+        source: "../"
+        target: "/var/www"
         bind:
           propagation: shared
     environment:

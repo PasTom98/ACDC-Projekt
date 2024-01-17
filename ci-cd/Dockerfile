@@ -1,2 +1,0 @@
-FROM rancher/dind:latest
-

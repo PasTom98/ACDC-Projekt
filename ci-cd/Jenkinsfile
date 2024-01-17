@@ -30,9 +30,9 @@ pipeline{
                 script {
                     try {
                         dir('docker'){
-                        sh 'docker-compose -f docker-compose.yml build'
-                        sh 'docker-compose -f docker-compose.yml up -d'
-                        sh 'docker ps'
+                            sh 'docker-compose -f docker-compose.yml build'
+                            sh 'docker-compose -f docker-compose.yml up -d'
+                            sh 'docker ps'
                         }
                         echo 'build docker image successfully'
                     } catch (Exception e) {
@@ -44,12 +44,14 @@ pipeline{
         stage("Stop docker container after build") {
             steps {
                 script {
-                    try {
-                    sh 'docker-compose down'
-                    sh 'docker ps'
-                    echo 'Stopped container succesfully'
+                    dir('docker') {
+                        try {
+                            sh 'docker-compose down'
+                            sh 'docker ps'
+                            echo 'Stopped container succesfully'
+                        }
                     } catch (Exception e) {
-                    echo 'Something went wron stopping the container'
+                        echo 'Something went wron stopping the container'
                     }
                 }
             }
