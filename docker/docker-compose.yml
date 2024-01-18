@@ -35,11 +35,7 @@ services:
       MYSQL_PASSWORD: adm1n
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
-      - type: bind
-        source: ../config/
-        target: /docker-entrypoint-initdb.d
-        bind:
-          propagation: rshared
+      - ../data/:/docker-entrypoint-initdb.d
     networks:
       - acdc_lamp
 
