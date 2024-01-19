@@ -44,7 +44,7 @@ pipeline{
         }
         stage('Login to Docker Hub') {      	
             steps{                       	
-	            sh 'echo Kalle-docker2210 | docker login -u pato98 --password-stdin'                		
+	            sh 'echo Kalle-docker2210| docker login -u pato98 --password-stdin'                		
 	            echo 'Login Completed'      
             }           
         }        
