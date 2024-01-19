@@ -41,6 +41,20 @@ pipeline{
                 }
             }
         }
+        stage("LogIn to Dockerhub") {
+            steps {
+                script {
+                    'echo dckr_pat_HEb8vN9DjiaHdLMN-g6pUan4T44 | sudo docker login -u pato98 --password-stdin'                     
+                    echo 'Login Completed'
+                }
+            }
+        }
+        stage('Push Image to Docker Hub') {         
+            steps{                            
+                sh 'sudo docker push pato98/acdc_presentation:$BUILD_NUMBER'           
+                echo 'Push Image Completed'       
+            }            
+        }
         stage("Stop docker container after build") {
             steps {
                 script {
