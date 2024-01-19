@@ -1,4 +1,7 @@
 pipeline{
+    environment {     
+    DOCKERHUB_CREDENTIALS= credentials('dockerhub_access_token')     
+    }
     agent {
         label 'docker'
     }
