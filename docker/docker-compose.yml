@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      tags:
+        - "pato98/acdc_presentation"
     volumes:
       - type: bind
         source: "../"
