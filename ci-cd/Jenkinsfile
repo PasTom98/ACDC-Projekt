@@ -42,14 +42,12 @@ pipeline{
                 }
             }
         }
-        stage("LogIn to Dockerhub") {
-            steps {
-                script {
-                    'echo dckr_pat_HEb8vN9DjiaHdLMN-g6pUan4T44 | sudo docker login -u pato98 --password-stdin'                     
-                    echo 'Login Completed'
-                }
-            }
-        }
+        stage('Login to Docker Hub') {      	
+            steps{                       	
+	            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                		
+	            echo 'Login Completed'      
+            }           
+        }        
         stage('Push Image to Docker Hub') {         
             steps{                            
                 sh 'sudo docker push pato98/acdc_presentation:$BUILD_NUMBER'           
