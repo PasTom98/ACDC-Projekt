@@ -1,4 +1,3 @@
 FROM mysql:latest as db
 
-RUN echo $pwd
-COPY ../data/ /data
+COPY ../data/ /data/
