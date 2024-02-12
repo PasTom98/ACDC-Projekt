@@ -9,7 +9,7 @@ pipeline{
         stage("Pull Docker-Image") {
             steps{
                 script{
-                sh 'ssh -tto StrictHostKeyChecking=no root@localhost -p 22022 "bash -s" < deploy.sh'
+                sh 'ssh -tto StrictHostKeyChecking=no root@localhost -p 22022 deploy.sh'
                 }
             }
         }
