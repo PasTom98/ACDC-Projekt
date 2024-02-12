@@ -1,0 +1,35 @@
+{
+    agent {
+        label 'jenkins_deploy'
+        }
+    stages{
+        stage("Connect to production environment via ssh"){
+            script{
+                sh 'sshpass -p "debian" ssh -o StrictHostKeyChecking=no debian@localhost -p 22022'
+            }
+        }
+        stage("Pull Docker-Image") {
+            script{
+                sh 'docker pull pato98/acdc_presentation:latest'
+            }
+        }
+        stage("Delete current running container"){
+            steps{
+                script {
+                    try {
+                        sh 'docker system prune -a --volumes -f'
+                        echo 'Pruned docker succesfully'
+                    } catch (Exception e) {
+                        echo 'Something went wrong pruning docker data'
+                    }
+                }
+            }
+        }
+        stage("Run Container") {
+            
+        }
+        stage("Test"){
+            
+        }
+    }
+}
