@@ -1,3 +1,4 @@
 FROM mysql:latest as database
 
-COPY ../../data/ /docker-entrypoint-initdb.d
+COPY /Users/pascal.tomek/Projekte/ACDC-Projekt/data /docker-entrypoint-initdb.d
+
