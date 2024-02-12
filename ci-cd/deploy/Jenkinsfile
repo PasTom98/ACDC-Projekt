@@ -29,11 +29,5 @@ pipeline{
                 }
             }
         }
-        stage("Run Container") {
-            
-        }
-        stage("Test"){
-            
-        }
     }
 }
