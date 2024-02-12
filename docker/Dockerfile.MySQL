@@ -1,3 +1,5 @@
 FROM mysql:latest as db
 
+WORKDIR /var/lib/database
+
 COPY ../data/ /data
