@@ -10,7 +10,7 @@ services:
         - "pato98/acdc_presentation"
     volumes:
       - type: bind
-        source: "../"
+        source: "."
         target: /var/www
         bind:
           propagation: rshared

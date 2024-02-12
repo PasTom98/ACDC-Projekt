@@ -32,7 +32,7 @@ pipeline{
             steps {
                 script {
                     try {
-                        dir('docker'){
+                        script{
                             sh 'docker-compose -f docker-compose.prod.yml build'
                         }
                         echo 'build docker image successfully'
@@ -58,7 +58,7 @@ pipeline{
             steps {
                 script {
                     try {
-                        dir('docker') {
+                        script {
                             sh 'docker-compose down'
                             sh 'docker ps'
                         }
