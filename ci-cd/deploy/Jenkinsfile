@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label 'jenkins_deploy'
+        label 'deploy'
         }
     stages{
         stage("Connect to production environment via ssh"){
