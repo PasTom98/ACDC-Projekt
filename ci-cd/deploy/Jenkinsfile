@@ -13,15 +13,10 @@ pipeline{
                 }
             }
         }
-        stage("Delete current running container"){
+        stage("Start container"){
             steps{
                 script {
-                    try {
-                        sh 'docker system prune -a --volumes -f'
-                        echo 'Pruned docker succesfully'
-                    } catch (Exception e) {
-                        echo 'Something went wrong pruning docker data'
-                    }
+                    sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker run --publish 8080:8080 -d pato98/acdc_presentation"'
                 }
             }
         }
