@@ -6,7 +6,7 @@ pipeline{
         stage("Connect to production environment via ssh"){
             steps{
                 script{
-                sh 'sshpass -p "debian" ssh -o StrictHostKeyChecking=no debian@localhost -p 22022'
+                sh 'echo "debian" | ssh -o StrictHostKeyChecking=no debian@localhost -p 22022'
                 }    
             }
         }
