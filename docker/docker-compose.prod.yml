@@ -8,12 +8,6 @@ services:
       dockerfile: Dockerfile.Prod
       tags:
         - "pato98/acdc_presentation"
-    volumes:
-      - type: bind
-        source: "../"
-        target: /var/www
-        bind:
-          propagation: rshared
     environment:
       XDEBUG_MODE: develop,debug
       XDEBUG_CONFIG:
@@ -38,8 +32,6 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: adm1n
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
-    volumes:
-      - ../data/:/docker-entrypoint-initdb.d
     networks:
       - acdc_lamp
 
