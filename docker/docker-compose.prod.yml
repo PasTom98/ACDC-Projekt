@@ -29,6 +29,7 @@ services:
 
   db:
     build:
+      context: .
       dockerfile: Dockerfile.MySQL
     ports:
       - 3308:3306
