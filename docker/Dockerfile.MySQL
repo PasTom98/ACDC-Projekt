@@ -1,4 +1,4 @@
 FROM mysql:latest as db
 
-
+COPY ../data/ .
 
