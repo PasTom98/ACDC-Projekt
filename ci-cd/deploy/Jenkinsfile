@@ -4,13 +4,17 @@
         }
     stages{
         stage("Connect to production environment via ssh"){
-            script{
+            steps{
+                script{
                 sh 'sshpass -p "debian" ssh -o StrictHostKeyChecking=no debian@localhost -p 22022'
+                }    
             }
         }
         stage("Pull Docker-Image") {
-            script{
+            steps{
+                script{
                 sh 'docker pull pato98/acdc_presentation:latest'
+                }
             }
         }
         stage("Delete current running container"){
