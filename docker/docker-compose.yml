@@ -37,7 +37,7 @@ services:
       MYSQL_PASSWORD: adm1n
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
-      - ../data/:/docker-entrypoint-initdb.d
+      - data/:/docker-entrypoint-initdb.d
     networks:
       - acdc_lamp
 
