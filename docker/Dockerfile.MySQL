@@ -1,4 +1,4 @@
 FROM mysql:latest as db
 
-COPY ../data /docker-entrypoint-initdb.d
+COPY ../data/ /docker-entrypoint-initdb.d
 
