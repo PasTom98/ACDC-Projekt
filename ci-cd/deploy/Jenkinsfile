@@ -9,7 +9,7 @@ pipeline{
         stage("Pull Docker-Image") {
             steps{
                 script{
-                sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker pull pato98/acdc_presentation:latest && docker run acdc_presentatio"'
+                sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker pull pato98/acdc_presentation:latest && docker run acdc_presentation"'
                 }
             }
         }
