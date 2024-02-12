@@ -9,7 +9,7 @@ pipeline{
         stage("Connect to production environment via ssh"){
             steps{
                 script{
-                sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022'
+                sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 && "ls -la"'
                 }  
             }
         }
