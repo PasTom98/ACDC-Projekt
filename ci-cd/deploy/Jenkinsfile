@@ -6,13 +6,6 @@ pipeline{
         label 'deploy'
         }
     stages{
-        stage("Connect to production environment via ssh"){
-            steps{
-                script{
-                sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022'
-                }  
-            }
-        }
         stage("Pull Docker-Image") {
             steps{
                 script{
