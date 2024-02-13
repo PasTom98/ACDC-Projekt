@@ -5,7 +5,7 @@ $connect = mysqli_connect(
     'admin',
     'adm1n',
     'ACDC_LAMP',
-    3308
+    3306
 );
 
 $query = 'SELECT * FROM authors';
