@@ -2,7 +2,7 @@
 phpinfo();
 
 $connect = mysqli_connect(
-    '172.17.0.3',
+    '172.17.0.2',
     'admin',
     'adm1n',
     'ACDC_LAMP',
