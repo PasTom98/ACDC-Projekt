@@ -50,7 +50,8 @@ pipeline{
         }        
         stage('Push Image to Docker Hub') {         
             steps{                            
-                sh ' docker push pato98/acdc_presentation'           
+                sh ' docker push pato98/acdc_presentation'
+                sh ' docker push pato98/acdc_db_presentation'           
                 echo 'Push Image Completed test'       
             }            
         }
