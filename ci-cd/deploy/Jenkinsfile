@@ -1,6 +1,6 @@
 pipeline{
     environment {     
-    SSH_VM = credentials('acdc_presentation_pw')     
+    SSH_VM = credentials('local_ssh')     
     }
     agent {
         label 'deploy'
