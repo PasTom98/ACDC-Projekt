@@ -7,17 +7,14 @@ pipeline{
         }
     stages{
         stage("Remove old Docker files") {
-            steps{
-                script{
-                    sh 'echo debian | ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 ./prune_docker.sh --password-stdin'
-                }
+            sshagent(['local_ssh']) {
+                sh 'ssh -o StrictHostKeyChecking=no debian@localhost -p 22022 ./prune_docker.sh'
             }
         }
         stage("Pull Docker-Image") {
             steps{
                 script{
-                sh 'echo debian | ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 ./deploy.sh --password-stdin'
-                sh 'echo $SSH_VM_PW'
+                sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 ./deploy.sh '
                 }
             }
         }
@@ -25,7 +22,6 @@ pipeline{
             steps{
                 script {
                     sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker run --name acdc --publish 8080:8080 -d pato98/acdc_presentation && docker run --name db --publish 3308:3306 -d pato98/acdc_db_presentation"'
-                    sh 'echo $SSH_VM_PW'
                 }
             }
         }
@@ -33,7 +29,6 @@ pipeline{
             steps{
                 script{
                     sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker network create acdc_lamp && docker network connect acdc_lamp acdc && docker network connect acdc_lamp db"'
-                    sh 'echo $SSH_VM_PW'
                 }
             }
         }
