@@ -16,7 +16,7 @@ pipeline{
         stage("Start container"){
             steps{
                 script {
-                    sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker run --name acdc --publish 8080:8080 -d pato98/acdc_presentation && docker run --name db --publish 3308:3306 -d pato98/acdc_db_presentation --bind 172.17.0.2"'
+                    sh 'ssh -tto StrictHostKeyChecking=no debian@localhost -p 22022 "docker run --name acdc --publish 8080:8080 -d pato98/acdc_presentation && docker run --name db --publish 172.17.0.2:3308:3306 -d pato98/acdc_db_presentation"'
                 }
             }
         }
