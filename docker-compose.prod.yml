@@ -39,5 +39,5 @@ services:
 
 networks:
   acdc_lamp:
-    driver: bridge
+
     
