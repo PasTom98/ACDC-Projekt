@@ -1,5 +1,7 @@
 FROM mysql:latest as db
 
-WORKDIR /var/lib/database
+WORKDIR /var/lib
 
-COPY data/ /data
+RUN mkdir -p /var/lib/database
+
+COPY data/ /database
