@@ -14,7 +14,7 @@ services:
         client_host=host.docker.internal
         start_with_request=yes
     ports:
-      - 8081:80
+      - 80:80
       - 9000:9000
     extra_hosts:
       - "host.docker.internal:host-gateway"
