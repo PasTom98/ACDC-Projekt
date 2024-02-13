@@ -7,8 +7,10 @@ pipeline{
         }
     stages{
         stage("Remove old Docker files") {
-            sshagent(['local_ssh']) {
+            steps{
+                sshagent(['local_ssh']) {
                 sh 'ssh -o StrictHostKeyChecking=no debian@localhost -p 22022 ./prune_docker.sh'
+                }
             }
         }
         stage("Pull Docker-Image") {
