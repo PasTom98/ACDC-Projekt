@@ -1,6 +1,6 @@
 {
     "name": "acdc_lamp",
-    "dockerComposeFile": "../docker/docker-compose.yml",
+    "dockerComposeFile": "../docker-compose.yml",
     "service": "webserver",
     "workspaceFolder": "/var/www",
     "features": {

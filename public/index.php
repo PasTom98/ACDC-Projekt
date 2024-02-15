@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 
 $connect = mysqli_connect(
     'db',
