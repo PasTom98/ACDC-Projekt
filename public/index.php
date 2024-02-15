@@ -1,6 +1,6 @@
 <?php
 
-#phpinfo();
+phpinfo();
 
 $connect = mysqli_connect(
     'db',
