@@ -3,6 +3,16 @@
     "dockerComposeFile": "../docker-compose.yml",
     "service": "webserver",
     "workspaceFolder": "/var/www",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rioj7.context-menu-extra"
+            ],
+            "settings": {
+                "files.autoSave": "afterDelay"
+            }
+        }
+    },
     "features": {
         "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {},
         "ghcr.io/devcontainers/features/git:1": {}
